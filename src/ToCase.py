@@ -373,9 +373,22 @@ class Case:
     def toSentence(string: str, case: str = "lower"):
         string = string.strip()
         print("String:", string)
+
+        if len(string.split(" ")) > 1:
+            print("Is a Sentence")
+            l = []
+            for i in string.split():
+                if case == "lower":
+                        l.append(i.lower())
+                elif case == "upper":
+                        l.append(i.upper())
+                elif case == "title":
+                        l.append(i.title())
+            sentence = " ".join(l)
+            return sentence
         
         # For Snake:
-        if len(string.split("_")) > 1:
+        elif len(string.split("_")) > 1:
             print("Is a Snake")
             _list = string.split("_")
             last = []
@@ -484,11 +497,11 @@ class Case:
                 print("Is a Camel")
                 first = string[:index]
                 if case == "lower":
-                        l.append(i.lower())
+                        first = first.lower()
                 elif case == "upper":
-                        l.append(i.upper())
+                        first = first.upper()
                 elif case == "title":
-                        l.append(i.title())
+                        first = first.title()
                 print("first:", first)
                 l = []
                 for i in last:
