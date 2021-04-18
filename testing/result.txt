@@ -22,51 +22,51 @@ caseTestWord1Word2
 caseTestWord1Word2
 caseTestWord1Word2
 casetestWord1Word2
-case-testWord1-Word2
+case-testWord1-Word2 +TODO
 testWord1Word3
 caseTestWord2Word3
 caseTestWord2Word3
 Was returned a lower case, because the string has no differentiator
-None
+None +TODO
 Was returned a lower case, because the string has no differentiator
-None
+None +TODO
 Was returned a lower case, because the string has no differentiator
-None
+None +TODO
 
 SnakeCase:
 case_test_word_1_word2
 case_test_word1_word2
-case__t_e_s_t_word1_word2
+case__t_e_s_t_word1_word2 +TODO
 case_test_word1_word2
 casetest_word_1_word2
-case-test_word1-word2
+case-test_word1-word2 +TODO
 case_test_word1_word3
 Was returned a lower case, because the string has no differentiator
-None
+None +TODO
 case_test_word2_word3
 Was returned a lower case, because the string has no differentiator
-None
+None +TODO
 Was returned a lower case, because the string has no differentiator
-None
+None +TODO
 Was returned a lower case, because the string has no differentiator
-None
+None +TODO
 
 KebabCase:
 case-test-word-1-word2
 case-test-word1-word2
 case-test-word1-word2
-case--t-e-s-t-word1-word2
+case--t-e-s-t-word1-word2 +TODO
 casetest-word-1-word2
 case-test-word1-word2
 case-test-word1-word3
 case-test-word2-word3
 case-test-word2-word3
 Was returned a lower case, because the string has no differentiator
-None
+None +TODO
 Was returned a lower case, because the string has no differentiator
-None
+None +TODO
 Was returned a lower case, because the string has no differentiator
-None
+None +TODO
 
 PascalCase:
 CaseTestWord1Word2
@@ -74,24 +74,24 @@ CaseTestWord1Word2
 CaseTestWord1Word2
 CaseTestWord1Word2
 CasetestWord1Word2
-Case-TestWord1-Word2
+Case-TestWord1-Word2 +TODO
 CaseTestWord1Word3
 CaseTestWord2Word3
 CaseTestWord2Word3
 Was returned a title case, because the string has no differentiator
-None
+None +TODO
 Was returned a title case, because the string has no differentiator
-None
+None +TODO
 Was returned a title case, because the string has no differentiator
-None
+None +TODO
 
 UpperSnakeCase:
 CASE_TEST_WORD_1_WORD2
 CASE_TEST_WORD1_WORD2
-CASE__T_E_S_T_WORD1_WORD2
+CASE__T_E_S_T_WORD1_WORD2 +TODO
 CASE_TEST_WORD1_WORD2
 CASETEST_WORD_1_WORD2
-CASE-TEST_WORD1-WORD2
+CASE-TEST_WORD1-WORD2 +TODO
 CASE_TEST_WORD1_WORD3
 Was returned a upper case, because the string has no differentiator
 CASE_TEST_WORD2_WORD3
@@ -110,13 +110,13 @@ case test word1 word2
 case test word1 word2
 case test word1 word2
 casetest word 1 word2
-case-test word1-word2
+case-test word1-word2 +TODO
 case test word1 word3
 case test word2 word3
 case test word2 word3
 Was returned a lower case, because the string has no differentiator
-None
+None +TODO
 Was returned a lower case, because the string has no differentiator
-None
+None +TODO
 Was returned a lower case, because the string has no differentiator
-None
+None +TODO

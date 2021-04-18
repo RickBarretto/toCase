@@ -27,21 +27,21 @@ class Case:
         result = sep1.join(last)
         return result
 
-    def _Formarter(string: str, case:str):
+    def _Formarter(string: str, case1:str):
         if case1 == "upper":
-            print(f"Was returned a {case} case, because the string has no differentiator")
+            print(f"Was returned a {case1} case, because the string has no differentiator")
             return string.upper()
         elif case1 == "lower":
-            print(f"Was returned a {case} case, because the string has no differentiator")
+            print(f"Was returned a {case1} case, because the string has no differentiator")
             return string.lower()
         elif case1 == "title":
-            print(f"Was returned a {case} case, because the string has no differentiator")
+            print(f"Was returned a {case1} case, because the string has no differentiator")
             return string.title()
         else:
             ValueError("case is wrong, choose between: 'lower', 'upper' or 'title'")
 
 
-    def toCamel(string: str, case1: str):
+    def toCamel(string: str, case1: str = "lower"):
         string = string.strip()
         
         # For Sentences:
