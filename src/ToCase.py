@@ -1,8 +1,6 @@
 import re
 
-
 class Case:
-    
 
     def _CamelSep(string:str, sep:str):
         _list = string.split(sep)
@@ -28,6 +26,7 @@ class Case:
         return result
 
     def _Formarter(string: str, case1:str):
+        string = string
         if case1 == "upper":
             print(f"Was returned a {case1} case, because the string has no differentiator")
             return string.upper()
