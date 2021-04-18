@@ -4,7 +4,7 @@ import re
 class Case:
     
 
-    def _toCamelSep(string:str, sep:str, case:str="lower"):
+    def _toCamelSep(string:str, sep:str):
         _list = string.split(sep)
         first = _list[0].lower()
         print("first:", first)
@@ -16,6 +16,15 @@ class Case:
         result = str(first + last)
         return result
 
+    def _toSnakeSep(string: str, sep:str):
+        _list = string.split(sep)
+        last = []
+        for i in _list:
+            last.append(i.lower())
+        result = "_".join(last)
+        print("result:", result)
+        return result
+
     def toCamel(string: str, case: str = "lower"):
         string = string.strip()
         print("String:", string)
@@ -23,18 +32,18 @@ class Case:
         # For Sentences:
         if len(string.split(" ")) > 1:
             print("Is a Sentence")
-            return Case._toCamelSep(string, " ", case)
+            return Case._toCamelSep(string, " ")
         
         # For Snakes:
         elif len(string.split("_")) > 1:
             print("Is a Snake")
-            return Case._toCamelSep(string, "_", case)
+            return Case._toCamelSep(string, "_")
             
         
         # For Kebab:
         elif len(string.split("-")) > 1:
             print("Is a Kebab")
-            return Case._toCamelSep(string, "-", case)
+            return Case._toCamelSep(string, "-")
     
         # For Uppers, Titles and Lowers:
         elif string.istitle() or string.isupper() or string.islower():
@@ -76,49 +85,26 @@ class Case:
         # For Sentences:
         if len(string.split(" ")) > 1:
             print("Is a Sentence")
-            _list = string.split(" ")
-            last = []
-            for i in _list:
-                last.append(i.lower())
-            sentence = "_".join(last)
-            print("sentence:", sentence)
-            return sentence
+            return Case._toSnakeSep(string, " ")
         
         # For Kebab:
         elif len(string.split("-")) > 1:
             print("Is a Kebab")
-            _list = string.split("-")
-            last = []
-            for i in _list:
-                last.append(i.lower())
-            kebab = "_".join(last)
-            print("kebab:", kebab)
-            return kebab
+            return Case._toSnakeSep(string, "-")
     
-        # For Uppers:
-        elif string.isupper():
-            if case == "lower":
-                print(f"Was returned a {case} case, because the string has no differentiator")
-                return string.lower()
-            elif case == "upper":
-                print(f"Was returned a {case} case, because the string has no differentiator")
-                return string
-        # For Lowers:
-        elif string.islower():
-            if case == "upper":
-                print(f"Was returned a {case} case, because the string has no differentiator")
-                return string.upper()
-            elif case == "lower":
-                print(f"Was returned a {case} case, because the string has no differentiator")
-                return string
-        # For Titles:
-        elif string.istitle():
+        # For Uppers, Titles and Lowers:
+        elif string.istitle() or string.isupper() or string.islower():
             if case == "upper":
                 print(f"Was returned a {case} case, because the string has no differentiator")
                 return string.upper()
             elif case == "lower":
                 print(f"Was returned a {case} case, because the string has no differentiator")
                 return string.lower()
+            elif case == "title":
+                print(f"Was returned a {case} case, because the string has no differentiator")
+                return string.title()
+            else:
+                ValueError("case is wrong, choose between: 'lower', 'upper' or 'title'")
         # Errors:
         elif string.isdecimal() or string.isdigit() or string.isnumeric():
             raise ValueError("It's a number")
