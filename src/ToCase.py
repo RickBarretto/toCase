@@ -4,7 +4,7 @@ import re
 class Case:
     
 
-    def _toCamelSep(string:str, sep:str):
+    def _CamelSep(string:str, sep:str):
         _list = string.split(sep)
         first = _list[0].lower()
         print("first:", first)
@@ -16,52 +16,38 @@ class Case:
         result = str(first + last)
         return result
 
-    def _toSnakeSep(string: str, sep:str):
+    def _OthersSep(string: str, sep:str, sep1:str, case:str):
         _list = string.split(sep)
         last = []
         for i in _list:
-            last.append(i.lower())
-        result = "_".join(last)
-        print("result:", result)
+            if case == "lower":
+                last.append(i.lower())
+            elif case == "upper":
+                last.append(i.upper())
+            elif case == "title":
+                last.append(i.title())
+        result = sep1.join(last)
         return result
 
-    def _toKebabSep(string: str, sep:str):
-        _list = string.split(sep)
-        last = []
-        for i in _list:
-            last.append(i.lower())
-        result = "-".join(last)
-        print("result:", result)
-        return result
 
-    def _toPascalSep (string:str, sep:str):
-            _list = string.split(sep)
-            l = []
-            for i in _list:
-                l.append(i.title())
-            l = "".join(l)
-            result = l
-            return result
-
-    def toCamel(string: str, case: str = "lower"):
+    def toCamel(string: str):
         string = string.strip()
         print("String:", string)
         
         # For Sentences:
         if len(string.split(" ")) > 1:
             print("Is a Sentence")
-            return Case._toCamelSep(string, " ")
+            return Case._CamelSep(string, " ")
         
         # For Snakes:
         elif len(string.split("_")) > 1:
             print("Is a Snake")
-            return Case._toCamelSep(string, "_")
+            return Case._CamelSep(string, "_")
             
-        
         # For Kebab:
         elif len(string.split("-")) > 1:
             print("Is a Kebab")
-            return Case._toCamelSep(string, "-")
+            return Case._CamelSep(string, "-")
     
         # For Uppers, Titles and Lowers:
         elif string.istitle() or string.isupper() or string.islower():
@@ -99,16 +85,18 @@ class Case:
     def toSnake(string: str, case: str = "lower"):
         string = string.strip()
         print("String:", string)
+        sep1 = "_"
+        case = case
         
         # For Sentences:
         if len(string.split(" ")) > 1:
             print("Is a Sentence")
-            return Case._toSnakeSep(string, " ")
+            return Case._OthersSep(string, " ", sep1=sep1, case=case)
         
         # For Kebab:
         elif len(string.split("-")) > 1:
             print("Is a Kebab")
-            return Case._toSnakeSep(string, "-")
+            return Case._OthersSep(string, "-", sep1=sep1, case=case)
     
         # For Uppers, Titles and Lowers:
         elif string.istitle() or string.isupper() or string.islower():
@@ -164,17 +152,18 @@ class Case:
     def toKebab(string: str, case: str = "lower"):
         string = string.strip()
         print("String:", string)
+        sep1 = "-"
+        case=case
         
         # For Sentences:
         if len(string.split(" ")) > 1:
             print("Is a Sentence")
-            return Case._toKebabSep(string, " ")
+            return Case._OthersSep(string, " ", sep1=sep1, case=case)
             
-        
         # For Snake:
         elif len(string.split("_")) > 1:
             print("Is a Kebab")
-            return Case._toKebabSep(string, " ")
+            return Case._OthersSep(string, "_", sep1=sep1, case=case)
     
         # For Uppers, Titles and Lowers:
         elif string.istitle() or string.isupper() or string.islower():
@@ -227,24 +216,26 @@ class Case:
 
 
 
-    def toPascal(string: str, case: str = "lower"):
+    def toPascal(string: str):
         string = string.strip()
         print("String:", string)
+        sep1 = ""
+        case= "title"
         
         # For Sentences:
         if len(string.split(" ")) > 1:
             print("Is a Sentence")
-            return Case._toPascalSep(string, " ")
+            return Case._OthersSep(string, " ", sep1=sep1, case=case)
         
         # For Snakes:
         elif len(string.split("_")) > 1:
             print("Is a Snake")
-            return Case._toPascalSep(string, "_")
+            return Case._OthersSep(string, "_", sep1=sep1, case=case)
         
         # For Kebab:
         elif len(string.split("-")) > 1:
             print("Is a Kebab")
-            return Case._toPascalSep(string, "-")
+            return Case._OthersSep(string, "-", sep1=sep1, case=case)
     
         # For Uppers, Titles and Lowers:
         elif string.istitle() or string.isupper() or string.islower():
@@ -301,84 +292,25 @@ class Case:
     def toSentence(string: str, case: str = "lower"):
         string = string.strip()
         print("String:", string)
+        sep1= " "
+        case=case
 
         if len(string.split(" ")) > 1:
             print("Is a Sentence")
-            l = []
-            for i in string.split():
-                if case == "lower":
-                        l.append(i.lower())
-                elif case == "upper":
-                        l.append(i.upper())
-                elif case == "title":
-                        l.append(i.title())
-            sentence = " ".join(l)
-            return sentence
+            return Case._OthersSep(string, " ", sep1=sep1, case=case)
         
         # For Snake:
         elif len(string.split("_")) > 1:
             print("Is a Snake")
-            _list = string.split("_")
-            last = []
-            for i in _list:
-                if case == "lower":
-                    last.append(i.lower())
-                elif case == "upper":
-                    last.append(i.upper())
-                elif case == "title":
-                    last.append(i.title())
-                else:
-                    raise ValueError("case is wrong, choose between: 'lower', 'upper' or 'title'")
-            snake = " ".join(last)
-            print("Snake:", snake)
-            return snake
+            return Case._OthersSep(string, "_", sep1=sep1, case=case)
         
         # For Kebab:
         elif len(string.split("-")) > 1:
             print("Is a Kebab")
-            _list = string.split("-")
-            last = []
-            for i in _list:
-                if case == "lower":
-                    last.append(i.lower())
-                elif case == "upper":
-                    last.append(i.upper())
-                elif case == "title":
-                    last.append(i.title())
-                else:
-                    raise ValueError("case is wrong, choose between: 'lower', 'upper' or 'title'")
-            kebab = " ".join(last)
-            print("Kebab:", kebab)
-            return kebab
+            return Case._OthersSep(string, "-", sep1=sep1, case=case)
     
-        # For Uppers:
-        elif string.isupper():
-            if case == "lower":
-                print(f"Was returned a {case} case, because the string has no differentiator")
-                return string.lower()
-            elif case == "upper":
-                print(f"Was returned a {case} case, because the string has no differentiator")
-                return string
-            elif case == "title":
-                print(f"Was returned a {case} case, because the string has no differentiator")
-                return string.title()
-            else:
-                raise ValueError("case is wrong, choose between: 'lower', 'upper' or 'title'")
-        # For Lowers:
-        elif string.islower():
-            if case == "upper":
-                print(f"Was returned a {case} case, because the string has no differentiator")
-                return string.upper()
-            elif case == "lower":
-                print(f"Was returned a {case} case, because the string has no differentiator")
-                return string
-            elif case == "title":
-                print(f"Was returned a {case} case, because the string has no differentiator")
-                return string.title()
-            else:
-                raise ValueError("case is wrong, choose between: 'lower', 'upper' or 'title'")
-        # For Titles:
-        elif string.istitle():
+        # For Uppers, Titles and Lowers:
+        elif string.istitle() or string.isupper() or string.islower():
             if case == "upper":
                 print(f"Was returned a {case} case, because the string has no differentiator")
                 return string.upper()
@@ -387,9 +319,9 @@ class Case:
                 return string.lower()
             elif case == "title":
                 print(f"Was returned a {case} case, because the string has no differentiator")
-                return string
+                return string.title()
             else:
-                raise ValueError("case is wrong, choose between: 'lower', 'upper' or 'title'")
+                ValueError("case is wrong, choose between: 'lower', 'upper' or 'title'")
         # Errors:
         elif string.isdecimal() or string.isdigit() or string.isnumeric():
             raise ValueError("It's a number")
