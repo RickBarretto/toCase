@@ -1,4 +1,4 @@
-from ToCase import Case
+from CopyCase import Case
 
 tests = [
     "   Case TEST word 1 word2  ",
