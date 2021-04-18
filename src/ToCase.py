@@ -246,30 +246,19 @@ class Case:
             print("Is a Kebab")
             return Case._toPascalSep(string, "-")
     
-        # For Uppers:
-        elif string.isupper():
-            if case == "lower":
-                print(f"Was returned a {case} case, because the string has no differentiator")
-                return string.lower()
-            elif case == "upper":
-                print(f"Was returned a {case} case, because the string has no differentiator")
-                return string
-        # For Lowers:
-        elif string.islower():
-            if case == "upper":
-                print(f"Was returned a {case} case, because the string has no differentiator")
-                return string.upper()
-            elif case == "lower":
-                print(f"Was returned a {case} case, because the string has no differentiator")
-                return string
-        # For Titles:
-        elif string.istitle():
+        # For Uppers, Titles and Lowers:
+        elif string.istitle() or string.isupper() or string.islower():
             if case == "upper":
                 print(f"Was returned a {case} case, because the string has no differentiator")
                 return string.upper()
             elif case == "lower":
                 print(f"Was returned a {case} case, because the string has no differentiator")
                 return string.lower()
+            elif case == "title":
+                print(f"Was returned a {case} case, because the string has no differentiator")
+                return string.title()
+            else:
+                ValueError("case is wrong, choose between: 'lower', 'upper' or 'title'")
         # Errors:
         elif string.isdecimal() or string.isdigit() or string.isnumeric():
             raise ValueError("It's a number")
