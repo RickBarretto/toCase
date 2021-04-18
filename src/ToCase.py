@@ -34,6 +34,15 @@ class Case:
         print("result:", result)
         return result
 
+    def _toPascalSep (string:str, sep:str):
+            _list = string.split(sep)
+            l = []
+            for i in _list:
+                l.append(i.title())
+            l = "".join(l)
+            result = l
+            return result
+
     def toCamel(string: str, case: str = "lower"):
         string = string.strip()
         print("String:", string)
@@ -225,35 +234,17 @@ class Case:
         # For Sentences:
         if len(string.split(" ")) > 1:
             print("Is a Sentence")
-            _list = string.split(" ")
-            l = []
-            for i in _list:
-                l.append(i.title())
-            l = "".join(l)
-            sentence = l
-            return sentence
+            return Case._toPascalSep(string, " ")
         
         # For Snakes:
         elif len(string.split("_")) > 1:
             print("Is a Snake")
-            _list = string.split("_")
-            l = []
-            for i in _list:
-                l.append(i.title())
-            l = "".join(l)
-            snake = l
-            return snake
+            return Case._toPascalSep(string, "_")
         
         # For Kebab:
         elif len(string.split("-")) > 1:
             print("Is a Kebab")
-            _list = string.split("-")
-            l = []
-            for i in _list:
-                l.append(i.title())
-            l = "".join(l)
-            kebab = l
-            return kebab
+            return Case._toPascalSep(string, "-")
     
         # For Uppers:
         elif string.isupper():
