@@ -7,12 +7,10 @@ class Case:
     def _CamelSep(string:str, sep:str):
         _list = string.split(sep)
         first = _list[0].lower()
-        print("first:", first)
         last = []
         for i in _list[1:]:
             last.append(i.title())
         last = "".join(last)
-        print("last:", last)
         result = str(first + last)
         return result
 
@@ -32,21 +30,17 @@ class Case:
 
     def toCamel(string: str):
         string = string.strip()
-        print("String:", string)
         
         # For Sentences:
         if len(string.split(" ")) > 1:
-            print("Is a Sentence")
             return Case._CamelSep(string, " ")
         
         # For Snakes:
         elif len(string.split("_")) > 1:
-            print("Is a Snake")
             return Case._CamelSep(string, "_")
             
         # For Kebab:
         elif len(string.split("-")) > 1:
-            print("Is a Kebab")
             return Case._CamelSep(string, "-")
     
         # For Uppers, Titles and Lowers:
@@ -70,12 +64,9 @@ class Case:
 
         # For Pascal:
         else:
-            print("Is a Pascal")
             _list = re.findall('[A-Z][^A-Z]*', string)
             first = _list[0].lower()
             last = _list[1:]
-            print("first:", first)
-            print("last:", last)
             last = "".join(last)
             pascal = first + last
             return pascal
@@ -84,18 +75,15 @@ class Case:
 
     def toSnake(string: str, case: str = "lower"):
         string = string.strip()
-        print("String:", string)
         sep1 = "_"
         case = case
         
         # For Sentences:
         if len(string.split(" ")) > 1:
-            print("Is a Sentence")
             return Case._OthersSep(string, " ", sep1=sep1, case=case)
         
         # For Kebab:
         elif len(string.split("-")) > 1:
-            print("Is a Kebab")
             return Case._OthersSep(string, "-", sep1=sep1, case=case)
     
         # For Uppers, Titles and Lowers:
@@ -120,29 +108,21 @@ class Case:
         # For Pascal/Camel:
         else:
             last = re.findall('[A-Z][^A-Z]*', string)
-            print("last", last)
             for i in re.finditer('[A-Z][^A-Z]*', string):
                 index = i.span()[0]
                 break
-            print("index:", index)
             if index == 0:
-                print("Is a Pascal")
                 first = ""
-                print("first: None")
                 l = []
                 for i in last:
                     l.append(i.lower())
-                print("list:", l)
                 pascal = str("_".join(l))
                 return pascal
             else:
-                print("Is a Camel")
                 first = string[:index]
-                print("first:", first)
                 l = []
                 for i in last:
                     l.append(i.lower())
-                print("list:", l)
                 r = str("_".join(l))
                 camel = first + "_" + r
                 return camel
@@ -151,18 +131,15 @@ class Case:
 
     def toKebab(string: str, case: str = "lower"):
         string = string.strip()
-        print("String:", string)
         sep1 = "-"
         case=case
         
         # For Sentences:
         if len(string.split(" ")) > 1:
-            print("Is a Sentence")
             return Case._OthersSep(string, " ", sep1=sep1, case=case)
             
         # For Snake:
         elif len(string.split("_")) > 1:
-            print("Is a Kebab")
             return Case._OthersSep(string, "_", sep1=sep1, case=case)
     
         # For Uppers, Titles and Lowers:
@@ -187,29 +164,21 @@ class Case:
         # For Pascal/Camel:
         else:
             last = re.findall('[A-Z][^A-Z]*', string)
-            print("last", last)
             for i in re.finditer('[A-Z][^A-Z]*', string):
                 index = i.span()[0]
                 break
-            print("index:", index)
             if index == 0:
-                print("Is a Pascal")
                 first = ""
-                print("first: None")
                 l = []
                 for i in last:
                     l.append(i.lower())
-                print("list:", l)
                 pascal = str("-".join(l))
                 return pascal
             else:
-                print("Is a Camel")
                 first = string[:index]
-                print("first:", first)
                 l = []
                 for i in last:
                     l.append(i.lower())
-                print("list:", l)
                 r = str("-".join(l))
                 camel = first + "-" + r
                 return camel
@@ -218,23 +187,19 @@ class Case:
 
     def toPascal(string: str):
         string = string.strip()
-        print("String:", string)
         sep1 = ""
         case= "title"
         
         # For Sentences:
         if len(string.split(" ")) > 1:
-            print("Is a Sentence")
             return Case._OthersSep(string, " ", sep1=sep1, case=case)
         
         # For Snakes:
         elif len(string.split("_")) > 1:
-            print("Is a Snake")
             return Case._OthersSep(string, "_", sep1=sep1, case=case)
         
         # For Kebab:
         elif len(string.split("-")) > 1:
-            print("Is a Kebab")
             return Case._OthersSep(string, "-", sep1=sep1, case=case)
     
         # For Uppers, Titles and Lowers:
@@ -258,19 +223,14 @@ class Case:
 
         # For Camel:
         else:
-            print("Is a Camel")
             last = re.findall('[A-Z][^A-Z]*', string)
-            print("last", last)
             for i in re.finditer('[A-Z][^A-Z]*', string):
                 index = i.span()[0]
                 break
-            print("index:", index)
             first = string[:index].title()
-            print("first:", first)
             l = []
             for i in last:
                 l.append(i.title())
-            print("list:", l)
             l = "".join(l)
             camel = first + l
             return camel
@@ -291,22 +251,18 @@ class Case:
 
     def toSentence(string: str, case: str = "lower"):
         string = string.strip()
-        print("String:", string)
         sep1= " "
         case=case
 
         if len(string.split(" ")) > 1:
-            print("Is a Sentence")
             return Case._OthersSep(string, " ", sep1=sep1, case=case)
         
         # For Snake:
         elif len(string.split("_")) > 1:
-            print("Is a Snake")
             return Case._OthersSep(string, "_", sep1=sep1, case=case)
         
         # For Kebab:
         elif len(string.split("-")) > 1:
-            print("Is a Kebab")
             return Case._OthersSep(string, "-", sep1=sep1, case=case)
     
         # For Uppers, Titles and Lowers:
@@ -331,16 +287,12 @@ class Case:
         # For Pascal/Camel:
         else:
             last = re.findall('[A-Z][^A-Z]*', string)
-            print("last", last)
             for i in re.finditer('[A-Z][^A-Z]*', string):
                 index = i.span()[0]
                 break
-            print("index:", index)
 
             if index == 0:
-                print("Is a Pascal")
                 first = ""
-                print("first: None")
                 l = []
                 for i in last:
                     if case == "lower":
@@ -349,12 +301,10 @@ class Case:
                         l.append(i.upper())
                     elif case == "title":
                         l.append(i.title())
-                print("list:", l)
                 pascal = str(" ".join(l))
                 return pascal
             
             else:
-                print("Is a Camel")
                 first = string[:index]
                 if case == "lower":
                         first = first.lower()
@@ -362,7 +312,6 @@ class Case:
                         first = first.upper()
                 elif case == "title":
                         first = first.title()
-                print("first:", first)
                 l = []
                 for i in last:
                     if case == "lower":
@@ -371,7 +320,6 @@ class Case:
                         l.append(i.upper())
                     elif case == "title":
                         l.append(i.title())
-                print("list:", l)
                 r = str(" ".join(l))
                 camel = first + " " + r
                 return camel
