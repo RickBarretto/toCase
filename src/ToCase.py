@@ -27,8 +27,21 @@ class Case:
         result = sep1.join(last)
         return result
 
+    def _Formarter(string: str, case:str):
+        if case1 == "upper":
+            print(f"Was returned a {case} case, because the string has no differentiator")
+            return string.upper()
+        elif case1 == "lower":
+            print(f"Was returned a {case} case, because the string has no differentiator")
+            return string.lower()
+        elif case1 == "title":
+            print(f"Was returned a {case} case, because the string has no differentiator")
+            return string.title()
+        else:
+            ValueError("case is wrong, choose between: 'lower', 'upper' or 'title'")
 
-    def toCamel(string: str):
+
+    def toCamel(string: str, case1: str):
         string = string.strip()
         
         # For Sentences:
@@ -45,17 +58,7 @@ class Case:
     
         # For Uppers, Titles and Lowers:
         elif string.istitle() or string.isupper() or string.islower():
-            if case == "upper":
-                print(f"Was returned a {case} case, because the string has no differentiator")
-                return string.upper()
-            elif case == "lower":
-                print(f"Was returned a {case} case, because the string has no differentiator")
-                return string.lower()
-            elif case == "title":
-                print(f"Was returned a {case} case, because the string has no differentiator")
-                return string.title()
-            else:
-                ValueError("case is wrong, choose between: 'lower', 'upper' or 'title'")
+            Case._Formarter(string, case1)
         # Errors:
         elif string.isdecimal() or string.isdigit() or string.isnumeric():
             raise ValueError("It's a number")
@@ -73,7 +76,7 @@ class Case:
 
             
 
-    def toSnake(string: str, case: str = "lower"):
+    def toSnake(string: str, case: str = "lower", case1: str = "lower"):
         string = string.strip()
         sep1 = "_"
         case = case
@@ -88,17 +91,8 @@ class Case:
     
         # For Uppers, Titles and Lowers:
         elif string.istitle() or string.isupper() or string.islower():
-            if case == "upper":
-                print(f"Was returned a {case} case, because the string has no differentiator")
-                return string.upper()
-            elif case == "lower":
-                print(f"Was returned a {case} case, because the string has no differentiator")
-                return string.lower()
-            elif case == "title":
-                print(f"Was returned a {case} case, because the string has no differentiator")
-                return string.title()
-            else:
-                ValueError("case is wrong, choose between: 'lower', 'upper' or 'title'")
+            Case._Formarter(string, case1)
+            
         # Errors:
         elif string.isdecimal() or string.isdigit() or string.isnumeric():
             raise ValueError("It's a number")
@@ -129,7 +123,7 @@ class Case:
             
 
 
-    def toKebab(string: str, case: str = "lower"):
+    def toKebab(string: str, case: str = "lower", case1: str = "lower"):
         string = string.strip()
         sep1 = "-"
         case=case
@@ -144,17 +138,7 @@ class Case:
     
         # For Uppers, Titles and Lowers:
         elif string.istitle() or string.isupper() or string.islower():
-            if case == "upper":
-                print(f"Was returned a {case} case, because the string has no differentiator")
-                return string.upper()
-            elif case == "lower":
-                print(f"Was returned a {case} case, because the string has no differentiator")
-                return string.lower()
-            elif case == "title":
-                print(f"Was returned a {case} case, because the string has no differentiator")
-                return string.title()
-            else:
-                ValueError("case is wrong, choose between: 'lower', 'upper' or 'title'")
+            Case._Formarter(string, case1)
         # Errors:
         elif string.isdecimal() or string.isdigit() or string.isnumeric():
             raise ValueError("It's a number")
@@ -185,7 +169,7 @@ class Case:
 
 
 
-    def toPascal(string: str):
+    def toPascal(string: str, case1: str = "title"):
         string = string.strip()
         sep1 = ""
         case= "title"
@@ -204,17 +188,7 @@ class Case:
     
         # For Uppers, Titles and Lowers:
         elif string.istitle() or string.isupper() or string.islower():
-            if case == "upper":
-                print(f"Was returned a {case} case, because the string has no differentiator")
-                return string.upper()
-            elif case == "lower":
-                print(f"Was returned a {case} case, because the string has no differentiator")
-                return string.lower()
-            elif case == "title":
-                print(f"Was returned a {case} case, because the string has no differentiator")
-                return string.title()
-            else:
-                ValueError("case is wrong, choose between: 'lower', 'upper' or 'title'")
+            Case._Formarter(string, case1)
         # Errors:
         elif string.isdecimal() or string.isdigit() or string.isnumeric():
             raise ValueError("It's a number")
@@ -249,7 +223,7 @@ class Case:
 
 
 
-    def toSentence(string: str, case: str = "lower"):
+    def toSentence(string: str, case: str = "lower", case1: str = "lower"):
         string = string.strip()
         sep1= " "
         case=case
@@ -267,17 +241,7 @@ class Case:
     
         # For Uppers, Titles and Lowers:
         elif string.istitle() or string.isupper() or string.islower():
-            if case == "upper":
-                print(f"Was returned a {case} case, because the string has no differentiator")
-                return string.upper()
-            elif case == "lower":
-                print(f"Was returned a {case} case, because the string has no differentiator")
-                return string.lower()
-            elif case == "title":
-                print(f"Was returned a {case} case, because the string has no differentiator")
-                return string.title()
-            else:
-                ValueError("case is wrong, choose between: 'lower', 'upper' or 'title'")
+            Case._Formarter(string, case1)
         # Errors:
         elif string.isdecimal() or string.isdigit() or string.isnumeric():
             raise ValueError("It's a number")
