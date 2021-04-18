@@ -4,6 +4,18 @@ import re
 class Case:
     
 
+    def _toCamelSep(string:str, sep:str, case:str="lower"):
+        _list = string.split(sep)
+        first = _list[0].lower()
+        print("first:", first)
+        last = []
+        for i in _list[1:]:
+            last.append(i.title())
+        last = "".join(last)
+        print("last:", last)
+        result = str(first + last)
+        return result
+
     def toCamel(string: str, case: str = "lower"):
         string = string.strip()
         print("String:", string)
@@ -11,44 +23,18 @@ class Case:
         # For Sentences:
         if len(string.split(" ")) > 1:
             print("Is a Sentence")
-            _list = string.split(" ")
-            first = _list[0].lower()
-            print("first:", first)
-            last = []
-            for i in _list[1:]:
-                last.append(i.title())
-            last = "".join(last)
-            print("last:", last)
-            sentence = str(first + last)
-            return sentence
+            return Case._toCamelSep(string, " ", case)
         
         # For Snakes:
         elif len(string.split("_")) > 1:
             print("Is a Snake")
-            _list = string.split("_")
-            first = _list[0].lower()
-            print("first:", first)
-            last = []
-            for i in _list[1:]:
-                last.append(i.title())
-            last = "".join(last)
-            print("last:", last)
-            snake = str(first + last)
-            return snake
+            return Case._toCamelSep(string, "_", case)
+            
         
         # For Kebab:
         elif len(string.split("-")) > 1:
             print("Is a Kebab")
-            _list = string.split("-")
-            first = _list[0].lower()
-            print("first:", first)
-            last = []
-            for i in _list[1:]:
-                last.append(i.title())
-            last = "".join(last)
-            print("last:", last)
-            kebab = str(first + last)
-            return kebab
+            return Case._toCamelSep(string, "-", case)
     
         # For Uppers:
         elif string.isupper():
