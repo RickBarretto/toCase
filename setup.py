@@ -9,7 +9,7 @@ setup(
     author = "Rick Barretto",
     author_email = "pdant.mailme@protonmail.ch",
     license = "MIT License",
-    packages=find_packages(include='my_package'),
+    packages=find_packages(include='toCase'),
 
     classifiers=[
         "Development Status :: 4 - Beta",
