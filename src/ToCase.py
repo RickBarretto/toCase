@@ -27,23 +27,22 @@ class Case:
         result = sep1.join(last)
         return result
 
-    def _Formarter(string: str, case1:str):
+    def _Formarter(string: str, case1:str, feedback:bool = False):
         """ Don't use it!"""
         string = string
-        if case1 == "upper":
+        if feedback:
             print(f"Was returned a {case1} case, because the string has no differentiator")
+        if case1 == "upper":
             return string.upper()
         elif case1 == "lower":
-            print(f"Was returned a {case1} case, because the string has no differentiator")
             return string.lower()
         elif case1 == "title":
-            print(f"Was returned a {case1} case, because the string has no differentiator")
             return string.title()
         else:
             ValueError("case is wrong, choose between: 'lower', 'upper' or 'title'")
 
 
-    def toCamel(string: str, case1: str = "lower"):
+    def toCamel(string: str, case1: str = "lower", feedback:bool = False):
         """toCamel
         string: str, case1: str = "lower"
 
@@ -70,7 +69,7 @@ class Case:
     
         # For Uppers, Titles and Lowers:
         elif string.istitle() or string.isupper() or string.islower():
-            Case._Formarter(string, case1)
+            Case._Formarter(string, case1, feedback=feedback)
         # Errors:
         elif string.isdecimal() or string.isdigit() or string.isnumeric():
             raise ValueError("It's a number")
@@ -88,7 +87,7 @@ class Case:
 
             
 
-    def toSnake(string: str, case: str = "lower", case1: str = "lower"):
+    def toSnake(string: str, case: str = "lower", case1: str = "lower", feedback:bool = False):
         """toSnake
         string: str, case: str = "lower", case1: str = "lower"
 
@@ -113,7 +112,7 @@ class Case:
     
         # For Uppers, Titles and Lowers:
         elif string.istitle() or string.isupper() or string.islower():
-            Case._Formarter(string, case1)
+            Case._Formarter(string, case1, feedback=feedback)
             
         # Errors:
         elif string.isdecimal() or string.isdigit() or string.isnumeric():
@@ -145,7 +144,7 @@ class Case:
             
 
 
-    def toKebab(string: str, case: str = "lower", case1: str = "lower"):
+    def toKebab(string: str, case: str = "lower", case1: str = "lower", feedback:bool = False):
         """toKebab
         string: str, case: str = "lower", case1: str = "lower"
 
@@ -170,7 +169,7 @@ class Case:
     
         # For Uppers, Titles and Lowers:
         elif string.istitle() or string.isupper() or string.islower():
-            Case._Formarter(string, case1)
+            Case._Formarter(string, case1, feedback=feedback)
         # Errors:
         elif string.isdecimal() or string.isdigit() or string.isnumeric():
             raise ValueError("It's a number")
@@ -201,7 +200,7 @@ class Case:
 
 
 
-    def toPascal(string: str, case1: str = "title"):
+    def toPascal(string: str, case1: str = "title", feedback:bool = False):
         """toPascal
         string: str, case: str = "lower", case1: str = "lower"
 
@@ -229,7 +228,7 @@ class Case:
     
         # For Uppers, Titles and Lowers:
         elif string.istitle() or string.isupper() or string.islower():
-            Case._Formarter(string, case1)
+            Case._Formarter(string, case1, feedback=feedback)
         # Errors:
         elif string.isdecimal() or string.isdigit() or string.isnumeric():
             raise ValueError("It's a number")
@@ -271,7 +270,7 @@ class Case:
 
 
 
-    def toSentence(string: str, case: str = "lower", case1: str = "lower"):
+    def toSentence(string: str, case: str = "lower", case1: str = "lower", feedback:bool = False):
         """toSentence
         string: str, case: str = "lower", case1: str = "lower"
 
@@ -299,7 +298,7 @@ class Case:
     
         # For Uppers, Titles and Lowers:
         elif string.istitle() or string.isupper() or string.islower():
-            Case._Formarter(string, case1)
+            Case._Formarter(string, case1, feedback=feedback)
         # Errors:
         elif string.isdecimal() or string.isdigit() or string.isnumeric():
             raise ValueError("It's a number")
