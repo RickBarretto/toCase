@@ -2,14 +2,14 @@ from setuptools import *
 
 setup(
     name = "toCase",
-    version = "1.2.2",
+    version = "1.2.3",
     description = "toCase is a Case converter.",
     long_description = "toCase is a Case converter made in python, for peoples who wants simplify this feature. It can convert to and from Camel, Pascal, Snake, Kebab and Strings Sentences. And, You don't need say what is the input type, the code parse it. Just say whats is the output type.",
     url = "https://github.com/RickBarretto/toCase",
     author = "Rick Barretto",
     author_email = "pdant.mailme@protonmail.ch",
     license = "MIT License",
-    packages=find_packages(include='toCase'),
+    packages=["toCase"],
 
     classifiers=[
         "Development Status :: 4 - Beta",

@@ -6,6 +6,6 @@ toCase is a Case converter made in python, for peoples who wants simplify this f
 
 from .toCase import *
 
-__version__ = "0.1.2"
+__version__ = "1.2.3"
 __author__ = 'Rick Barretto'
 __credits__ = 'Rick Barretto'
