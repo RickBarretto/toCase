@@ -11,12 +11,17 @@
 pip install git+https://github.com/RickBarretto/toCase.git
 ```
 
+## Why I must to use it?
++ toCase was made to make easy your life with case converting
++ I was made in python, so, if you want, you can copy the [toCase.py](https://github.com/RickBarretto/toCase/blob/main/src/ToCase.py) and use in your project. **It's free to use, look the [MIT LICENSE](LICENSE).**
+
 ## Glossary:
 - [What is it?](#what-is-it)
 - [Install](#install)
-- [Glossary:](#glossary)
 - [Why I must to use it?](#why-i-must-to-use-it)
+- [Glossary:](#glossary)
 - [Examples:](#examples)
+  - [Importing:](#importing)
   - [Convert to Camel Case:](#convert-to-camel-case)
   - [Convert to Snake Case:](#convert-to-snake-case)
   - [Convert to Kebab Case:](#convert-to-kebab-case)
@@ -24,12 +29,15 @@ pip install git+https://github.com/RickBarretto/toCase.git
   - [Convert to Sentence:](#convert-to-sentence)
 - [Read The Docs!](#read-the-docs)
 
-## Why I must to use it?
-+ toCase was made to make easy your life with case converting
-+ I was made in python, so, if you want, you can copy the [toCase.py](https://github.com/RickBarretto/toCase/blob/main/src/ToCase.py) and use in your project. **It's free to use, look the [MIT LICENSE](LICENSE).**
-
-
 ## Examples: 
+
+### Importing:
+```py
+>>> from toCase import Case
+>>> # or
+>>> from toCase import *
+>>> # see the examples below
+```
 
 ### Convert to Camel Case:
 ```py
