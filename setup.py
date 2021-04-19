@@ -2,7 +2,7 @@ from setuptools import *
 
 setup(
     name = "toCase",
-    version = "1.1.2",
+    version = "1.2.2",
     description = "toCase is a Case converter.",
     long_description = "toCase is a Case converter made in python, for peoples who wants simplify this feature. It can convert to and from Camel, Pascal, Snake, Kebab and Strings Sentences. And, You don't need say what is the input type, the code parse it. Just say whats is the output type.",
     url = "https://github.com/RickBarretto/toCase",
