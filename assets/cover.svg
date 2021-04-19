@@ -177,6 +177,16 @@
             position: absolute;
             top: 80%;
         }
+        span {
+            font-size: 10px;
+            text-shadow: 0 1px 0 #c1c1c1;
+            animation: 5s ease 0s normal forwards 1 p;
+            transform: rotateX(30deg) translateZ(100px);
+            position: relative;
+            align-self: flex-end;
+            margin-right: 2rem;
+            transform: translateY(5rem);
+        }
 
     </style>
     <div class="container">
@@ -184,6 +194,7 @@
         <h1>ToPascal</h1>
         <h1>to_snake</h1>
         <p>Convert your case type!</p>
+        <span>pip install git+https://github.com/RickBarretto/toCase.git</span>
     </div>
         </div>
     </foreignObject>
