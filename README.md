@@ -6,8 +6,14 @@
 **toCase** is a Case converter made in python, for peoples who wants simplify this feature. It can convert to and from Camel, Pascal, Snake, Kebab and Strings Sentences.
 **And, You don't need say what is the input type, the code parse it. Just say whats is the output type.**
 
+## Install
+```
+pip install git+https://github.com/RickBarretto/toCase.git
+```
+
 ## Glossary:
 - [What is it?](#what-is-it)
+- [Install](#install)
 - [Glossary:](#glossary)
 - [Why I must to use it?](#why-i-must-to-use-it)
 - [Examples:](#examples)
