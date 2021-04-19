@@ -1,6 +1,6 @@
 <h1 align="center">toCase<h1>
 
-<p align="center">made by: <a href="https://github.com/RickBarretto/">RickBarreto</a></p>
+<h4 align="center">made by: <a href="https://github.com/RickBarretto/">RickBarreto</a></h4>
 
 ## What is it?
 **toCase** is a Case converter made in python, for peoples who wants simplify this feature. It can convert to and from Camel, Pascal, Snake, Kebab and Strings Sentences.
