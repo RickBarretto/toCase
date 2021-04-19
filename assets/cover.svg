@@ -1,0 +1,190 @@
+<svg fill="none" viewBox="0 0 800 250" width="800" height="250" xmlns="http://www.w3.org/2000/svg">
+    <foreignObject width="100%" height="100%">
+        <div xmlns="http://www.w3.org/1999/xhtml">
+            <style>
+
+        ::selection{
+            background: #FFFF24;
+            color: #ABC9FF;
+        }
+        :root {
+        --time-to-start: 0s;
+
+        /* First line - Line 0 */
+        --line-first-width: 226px;
+        --line-first-range: 7;
+        --line-first-time: 6s;
+
+        /* Line 1 */
+        --line1-width: 250px;
+        --line1-range: 8;
+        --line1-time: 6s;
+
+        /* Last line */
+        --line-last-width: 260px;
+        --line-last-range: 8;
+        --line-last-time: 6s;
+        }
+
+        @keyframes animated-text1
+        {
+            0%{
+                width: 0;
+            }
+            15%{
+                width: var(--line-first-width);
+            }
+            30%{
+                width: 0;
+            }
+            100%{
+                width: 0;
+            }
+        }
+        @keyframes animated-text2
+        {
+            0%{
+                width: 0;
+            }
+            15%{
+                width: var(--line1-width);
+            }
+            30%{
+                width: 0;
+            }
+            100%{
+                width: 0;
+            }
+        }
+        @keyframes animated-text3
+        {
+            0%{
+                width: 0;
+            }
+            15%{
+                width: var(--line-last-width);
+            }
+            30%{
+                width: 0;
+            }
+            100%{
+                width: 0;
+            }
+        }
+        @keyframes animated-cursor
+        {
+            from{
+                border-right-color: transparent;
+            }
+            to{
+                border-right-color: var(--cursor-color);
+            }
+        }
+
+        @keyframes gradientBackground {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes opacity {
+            0% {
+                opacity: 1;
+            }
+            15%{
+                opacity: 1;
+            }
+            30%{
+                opacity: 1;
+            }
+            31% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes p {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .container {
+            font-family: "Ubuntu Mono", monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            width: 780px;
+            height: 200px;
+            background: linear-gradient(230deg,#FEEB5D 0%, #FEC42E 50%, #326D9C 50.1%, #347FB9 100%);
+            background-size: 170% 100%;
+            animation: gradientBackground 10s ease infinite;
+            color: white;
+            text-align: center;
+            perspective: 100em;
+            box-shadow: 0 1rem 5rem rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            font-size: 50px;
+            letter-spacing: 5px;
+            text-shadow:
+                0 1px 0 #c1c1c1,
+                0 2px 0 #c1c1c1,
+                0 3px 0 #c1c1c1,
+                0 4px 0 #c1c1c1,
+                0 12px 5px rgba(0, 0, 0, 0.1);
+            transform: rotateX(30deg);
+            position: absolute;
+            top: 10%;
+            border-right: #ABC9FF solid 5px;
+            overflow: hidden;
+            height: 28%;
+        }
+
+        h1:nth-child(1) {
+            opacity: 0;
+            animation: animated-text1 var(--line-first-time) steps(var(--line-first-range),end) var(--time-to-start) infinite normal both,
+            opacity var(--line-first-time) var(--time-to-start) infinite;
+        }
+        h1:nth-child(2) {
+            opacity: 0;
+            animation: animated-text2 var(--line1-time) steps(var(--line1-range),end) 2s infinite normal both,
+            opacity var(--line1-time) 2s infinite;
+        }
+        h1:nth-child(3) {
+            opacity: 0;
+            animation: animated-text3 var(--line-last-time) steps(var(--line-last-range),end) 4s infinite normal both,
+            opacity var(--line-last-time) 4s infinite;
+        }
+        p {
+            font-size: 20px;
+            text-shadow: 0 1px 0 #c1c1c1;
+            animation: 5s ease 0s normal forwards 1 p;
+            transform: rotateX(30deg) translateZ(100px);
+            position: absolute;
+            top: 80%;
+        }
+
+    </style>
+    <div class="container">
+        <h1>toCamel</h1>
+        <h1>ToPascal</h1>
+        <h1>to_snake</h1>
+        <p>Convert your case type!</p>
+    </div>
+        </div>
+    </foreignObject>
+</svg>

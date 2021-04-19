@@ -1,5 +1,5 @@
 <h1 align="center">toCase<h1>
-
+<img alt="Cover" src="./assets/cover.svg">
 <h4 align="center">made by: <a href="https://github.com/RickBarretto/">RickBarreto</a></h4>
 
 ## What is it?
