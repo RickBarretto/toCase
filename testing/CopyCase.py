@@ -1,10 +1,9 @@
 import re
 
-
 class Case:
-    
 
     def _CamelSep(string:str, sep:str):
+        """ Don't use it!"""
         _list = string.split(sep)
         first = _list[0].lower()
         last = []
@@ -15,6 +14,7 @@ class Case:
         return result
 
     def _OthersSep(string: str, sep:str, sep1:str, case:str):
+        """ Don't use it!"""
         _list = string.split(sep)
         last = []
         for i in _list:
@@ -28,6 +28,8 @@ class Case:
         return result
 
     def _Formarter(string: str, case1:str):
+        """ Don't use it!"""
+        string = string
         if case1 == "upper":
             print(f"Was returned a {case1} case, because the string has no differentiator")
             return string.upper()
@@ -42,6 +44,16 @@ class Case:
 
 
     def toCamel(string: str, case1: str = "lower"):
+        """toCamel
+        string: str, case1: str = "lower"
+
+        Returns a "camelCase"
+
+        + string is the input - It can be in a Pascal, a Sentence, Snake or Kebab case.
+        + case1 defines the output case of a string without differentiador, (" ", "-", "_")
+        + case1 options: "lower", "title", "upper"
+
+        """
         string = string.strip()
         
         # For Sentences:
@@ -77,6 +89,16 @@ class Case:
             
 
     def toSnake(string: str, case: str = "lower", case1: str = "lower"):
+        """toSnake
+        string: str, case: str = "lower", case1: str = "lower"
+
+        Returns "snake_case"
+
+        + string is the input - It can be in a Pascal, a Sentence, Snake or Kebab case.
+        + case defines the output case of a string with differentiador, (" ", "-", "_")
+        + case1 defines the output case of a string without differentiador, (" ", "-", "_")
+        + case/case1 options: "lower", "title", "upper"
+        """
         string = string.strip()
         sep1 = "_"
         case = case
@@ -124,6 +146,16 @@ class Case:
 
 
     def toKebab(string: str, case: str = "lower", case1: str = "lower"):
+        """toKebab
+        string: str, case: str = "lower", case1: str = "lower"
+
+        Returns "kebab-case"
+
+        + string is the input - It can be in a Pascal, a Sentence, Snake or Kebab case.
+        + case defines the output case of a string with differentiador, (" ", "-", "_")
+        + case1 defines the output case of a string without differentiador, (" ", "-", "_")
+        + case/case1 options: "lower", "title", "upper"
+        """
         string = string.strip()
         sep1 = "-"
         case=case
@@ -170,6 +202,15 @@ class Case:
 
 
     def toPascal(string: str, case1: str = "title"):
+        """toPascal
+        string: str, case: str = "lower", case1: str = "lower"
+
+        Returns "PascalCase"
+
+        + string is the input - It can be in a Pascal, a Sentence, Snake or Kebab case.
+        + case1 defines the output case of a string without differentiador, (" ", "-", "_")
+        + case1 options: "lower", "title", "upper"
+        """
         string = string.strip()
         sep1 = ""
         case= "title"
@@ -212,6 +253,13 @@ class Case:
 
 
     def toUpperSnake(string: str):
+        """toUpperSnake
+        string: str, case: str = "lower", case1: str = "lower"
+
+        Returns "UPPER_SNAKE_CASE"
+
+        + string is the input - It can be in a Pascal, a Sentence, Snake or Kebab case.
+        """
         
         # For Lowers, Uppers and Titles:
         if string.islower() or string.isupper() or string.istitle():
@@ -224,6 +272,16 @@ class Case:
 
 
     def toSentence(string: str, case: str = "lower", case1: str = "lower"):
+        """toSentence
+        string: str, case: str = "lower", case1: str = "lower"
+
+        Returns "String sentence"
+
+        + string is the input - It can be in a Pascal, a Sentence, Snake or Kebab case.
+        + case defines the output case of a string with differentiador, (" ", "-", "_")
+        + case1 defines the output case of a string without differentiador, (" ", "-", "_")
+        + case/case1 options: "lower", "title", "upper"
+        """
         string = string.strip()
         sep1= " "
         case=case
