@@ -1,17 +1,15 @@
-from setuptools import setup
-
-with open("README.md", "r") as fh:
-    long_description = fh.read()
+from setuptools import *
 
 setup(
     name = "toCase",
     version = "1.1.2",
     description = "toCase is a Case converter.",
+    long_description = "toCase is a Case converter made in python, for peoples who wants simplify this feature. It can convert to and from Camel, Pascal, Snake, Kebab and Strings Sentences. And, You don't need say what is the input type, the code parse it. Just say whats is the output type.",
     url = "https://github.com/RickBarretto/toCase",
     author = "Rick Barretto",
     author_email = "pdant.mailme@protonmail.ch",
     license = "MIT License",
-    packages=['toCase', 're'],
+    packages=find_packages(include='my_package'),
 
     classifiers=[
         "Development Status :: 4 - Beta",
