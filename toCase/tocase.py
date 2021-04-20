@@ -27,19 +27,11 @@ class Case:
         result = sep1.join(last)
         return result
 
-    def _Formarter(string: str, case1:str, feedback:bool = False):
+    def _Error():
         """ Don't use it!"""
-        string = string
-        if feedback:
-            print(f"Was returned a {case1} case, because the string has no differentiator")
-        if case1 == "upper":
-            return string.upper()
-        elif case1 == "lower":
-            return string.lower()
-        elif case1 == "title":
-            return string.title()
-        else:
-            ValueError("case is wrong, choose between: 'lower', 'upper' or 'title'")
+        #if feedback:
+            #print(f"Was returned a {case1} case, because the string has no differentiator")
+        raise ValueError("case is wrong, choose between: 'lower', 'upper' or 'title'")
 
 
     def toCamel(string: str, case1: str = "lower", feedback:bool = False):
@@ -69,7 +61,7 @@ class Case:
     
         # For Uppers, Titles and Lowers:
         elif string.istitle() or string.isupper() or string.islower():
-            Case._Formarter(string, case1, feedback=feedback)
+            Case._Error()
         # Errors:
         elif string.isdecimal() or string.isdigit() or string.isnumeric():
             raise ValueError("It's a number")
@@ -112,7 +104,7 @@ class Case:
     
         # For Uppers, Titles and Lowers:
         elif string.istitle() or string.isupper() or string.islower():
-            Case._Formarter(string, case1, feedback=feedback)
+            Case._Error()
             
         # Errors:
         elif string.isdecimal() or string.isdigit() or string.isnumeric():
@@ -169,7 +161,7 @@ class Case:
     
         # For Uppers, Titles and Lowers:
         elif string.istitle() or string.isupper() or string.islower():
-            Case._Formarter(string, case1, feedback=feedback)
+            Case._Error()
         # Errors:
         elif string.isdecimal() or string.isdigit() or string.isnumeric():
             raise ValueError("It's a number")
@@ -228,7 +220,7 @@ class Case:
     
         # For Uppers, Titles and Lowers:
         elif string.istitle() or string.isupper() or string.islower():
-            Case._Formarter(string, case1, feedback=feedback)
+            Case._Error()
         # Errors:
         elif string.isdecimal() or string.isdigit() or string.isnumeric():
             raise ValueError("It's a number")
@@ -298,7 +290,7 @@ class Case:
     
         # For Uppers, Titles and Lowers:
         elif string.istitle() or string.isupper() or string.islower():
-            Case._Formarter(string, case1, feedback=feedback)
+            Case._Error()
         # Errors:
         elif string.isdecimal() or string.isdigit() or string.isnumeric():
             raise ValueError("It's a number")
@@ -344,3 +336,5 @@ class Case:
                 r = str(" ".join(l))
                 camel = first + " " + r
                 return camel
+
+print(Case.toCamel("helloworld"))
