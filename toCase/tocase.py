@@ -336,5 +336,3 @@ class Case:
                 r = str(" ".join(l))
                 camel = first + " " + r
                 return camel
-
-print(Case.toCamel("helloworld"))
