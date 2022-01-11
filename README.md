@@ -1,4 +1,4 @@
-<h1 align="center">toCase<h1>
+<h1 align="center">RB toCase<h1>
 <img alt="Cover" src="./assets/cover.svg">
 <h4 align="center">made by: <a href="https://github.com/RickBarretto/">RickBarreto</a></h4>
 
@@ -22,6 +22,7 @@ pip install git+https://github.com/RickBarretto/toCase.git
 - [Install](#install)
 - [Why I must to use it?](#why-i-must-to-use-it)
 - [Glossary:](#glossary)
+- [Installing](#installing)
 - [Examples:](#examples)
   - [Importing:](#importing)
   - [Convert to Camel Case:](#convert-to-camel-case)
@@ -31,51 +32,61 @@ pip install git+https://github.com/RickBarretto/toCase.git
   - [Convert to Sentence:](#convert-to-sentence)
 - [Read The Docs!](#read-the-docs)
 
+## Installing
+
+```bash
+$ poetry add rb_tocase
+
+or
+
+$ pip install rb_tocase
+```
+
 ## Examples: 
 
 ### Importing:
 ```py
->>> from toCase import Case
+>>> from rb_tocase import Case
 >>> # or
->>> from toCase import *
+>>> from rb_tocase import *
 >>> # see the examples below
 ```
 
 ### Convert to Camel Case:
 ```py
->>> Case.toCamel("Changing to CaMel CASE")   # From String Sentence
+>>> Case.to_camel("Changing to CaMel CASE")   # From String Sentence
 'changingToCamelCase'
->>> Case.toCamel("Changing-to-camel-case")   # From Kebab Case
+>>> Case.to_camel("Changing-to-camel-case")   # From Kebab Case
 'changingToCamelCase'
->>> Case.toCamel("Changing_to_CAMEL_CASE")   # From Snake Case
+>>> Case.to_camel("Changing_to_CAMEL_CASE")   # From Snake Case
 'changingToCamelCase'
->>> Case.toCamel(" ChangingToCamelCase  ")   # From Pascal Case
+>>> Case.to_camel(" ChangingToCamelCase  ")   # From Pascal Case
 'changingToCamelCase'
 ```
 + [See more](DOC.md#casetocamelstring-str-case1-str--lower)
 
 ### Convert to Snake Case:
 ```py
->>> Case.toSnake(" ChanginToSnakeCase ")     # From Pascal Case
+>>> Case.to_snake(" ChanginToSnakeCase ")     # From Pascal Case
 'changin_to_snake_case'
->>> Case.toSnake(" Changin To Snake Case ")  # From String
+>>> Case.to_snake(" Changin To Snake Case ")  # From String
 'changin_to_snake_case'
->>> Case.toSnake(" Changin-To-Snake-Case ")  # From Kebab
+>>> Case.to_snake(" Changin-To-Snake-Case ")  # From Kebab
 'changin_to_snake_case'
->>> Case.toSnake(" changinToSnakeCase ")     # From Camel
+>>> Case.to_snake(" changinToSnakeCase ")     # From Camel
 'changin_to_snake_case'
 ```
 [See more](DOC.md#casetosnakestring-str-case-str--lower-case1-str--lower)
 
 ### Convert to Kebab Case:
 ```py
->>> Case.toKebab("Changing to Kebab")    # From String
+>>> Case.to_kebab("Changing to Kebab")    # From String
 'changing-to-kebab'
->>> Case.toKebab("ChangingToKebab")      # From Pascal Case
+>>> Case.to_kebab("ChangingToKebab")      # From Pascal Case
 'changing-to-kebab'
->>> Case.toKebab("changingToKebab")      # From Camel Case
+>>> Case.to_kebab("changingToKebab")      # From Camel Case
 'changing-to-kebab'
->>> Case.toKebab("changing_to_kebab")    # From Snake Case
+>>> Case.to_kebab("changing_to_kebab")    # From Snake Case
 'changing-to-kebab'
 ```
 
@@ -83,28 +94,28 @@ pip install git+https://github.com/RickBarretto/toCase.git
 
 ### Convert to Pascal Case:
 ```py
->>> Case.toPascal("Changing to Pascal")  # From String
+>>> Case.to_pascal("Changing to Pascal")  # From String
 'ChangingToPascal'
->>> Case.toPascal("Changing-to-Pascal")  # From Kebab
+>>> Case.to_pascal("Changing-to-Pascal")  # From Kebab
 'ChangingToPascal'
->>> Case.toPascal("Changing_to_Pascal")  # From Snake
+>>> Case.to_pascal("Changing_to_Pascal")  # From Snake
 'ChangingToPascal'
->>> Case.toPascal("ChangingtoPascal")    # From Pascal
+>>> Case.to_pascal("ChangingtoPascal")    # From Pascal
 'ChangingtoPascal'
->>> Case.toPascal("changingToPascal") # From Camel
+>>> Case.to_pascal("changingToPascal") # From Camel
 'ChangingToPascal'
 ```
 + [See more](DOC.md#casetopascalstring-str-case1-str--title)
 
 ### Convert to Sentence:
 ```py
->>> Case.toSentence("ItsAPascalCase")
+>>> Case.to_sentence("ItsAPascalCase")
 'its a pascal case'
->>> Case.toSentence("itsACamelCase")
+>>> Case.to_sentence("itsACamelCase")
 'its a camel case'
->>> Case.toSentence("Its-A-Kebab-Case")
+>>> Case.to_sentence("Its-A-Kebab-Case")
 'its a snake case'
->>> Case.toSentence("Its_a_snake_case")
+>>> Case.to_sentence("Its_a_snake_case")
 'its a snake case'
 ```
 + [See more](DOC.md#casetosentencestring-str-case-str--lower-case1-str--lower)

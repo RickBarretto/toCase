@@ -3,8 +3,8 @@ requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [tool.poetry]
-name = "rb-tocase"
-version = "1.3.0"
+name = "rb_tocase"
+version = "1.3.1"
 description = "RB toCase is a Case converter."
 authors = ["RickBarretto"]
 license = "MIT"
@@ -20,8 +20,14 @@ classifiers=[
     "Topic :: Text Processing"
 ]
 
+
 [tool.poetry.dev-dependencies]
 build = "0.7.0"
 setuptools = "^57.4.0"
-black = "^21.12b0"
 pdoc = "^8.0.1"
+
+[tool.poetry.dev-dependencies.black]
+version = "^21.12b0"
+allow-prereleases = true
+python = "^3.6"
+markers = "platform_python_implementation == 'CPython'"
