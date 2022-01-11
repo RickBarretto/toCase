@@ -8,18 +8,12 @@
 
 > Older name was toCase, but when I was publishing on Pipy tocase package already exists. So I changed the name!
 
-## Install
-```
-pip install git+https://github.com/RickBarretto/toCase.git
-```
-
 ## Why I must to use it?
 + toCase was made to make easy your life with case converting
 + I was made in python, so, if you want, you can copy the [toCase.py](https://github.com/RickBarretto/toCase/blob/main/src/ToCase.py) and use in your project. **It's free to use, look the [MIT LICENSE](LICENSE).**
 
 ## Glossary:
 - [What is it?](#what-is-it)
-- [Install](#install)
 - [Why I must to use it?](#why-i-must-to-use-it)
 - [Glossary:](#glossary)
 - [Installing](#installing)
