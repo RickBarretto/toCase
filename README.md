@@ -3,8 +3,10 @@
 <h4 align="center">made by: <a href="https://github.com/RickBarretto/">RickBarreto</a></h4>
 
 ## What is it?
-**toCase** is a Case converter made in python, for peoples who wants simplify this feature. It can convert to and from Camel, Pascal, Snake, Kebab and Strings Sentences.
+**RB toCase** is a Case converter made in python, for peoples who wants simplify this feature. It can convert to and from Camel, Pascal, Snake, Kebab and Strings Sentences.
 **And, You don't need say what is the input type, the code parse it. Just say whats is the output type.**
+
+> Older name was toCase, but when I was publishing on Pipy tocase package already exists. So I changed the name!
 
 ## Install
 ```
