@@ -34,7 +34,7 @@ class Case:
         raise ValueError("case is wrong, choose between: 'lower', 'upper' or 'title'")
 
 
-    def toCamel(string: str):
+    def to_camel(string: str):
         """toCamel
         string: str, case1: str = "lower"
 
@@ -79,7 +79,7 @@ class Case:
 
             
 
-    def toSnake(string: str, case: str = "lower"):
+    def to_snake(string: str, case: str = "lower"):
         """toSnake
         string: str, case: str = "lower", case1: str = "lower"
 
@@ -136,7 +136,7 @@ class Case:
             
 
 
-    def toKebab(string: str, case: str = "lower"):
+    def to_kebab(string: str, case: str = "lower"):
         """toKebab
         string: str, case: str = "lower", case1: str = "lower"
 
@@ -192,7 +192,7 @@ class Case:
 
 
 
-    def toPascal(string: str):
+    def to_pascal(string: str):
         """toPascal
         string: str, case: str = "lower", case1: str = "lower"
 
@@ -243,7 +243,7 @@ class Case:
 
 
 
-    def toUpperSnake(string: str):
+    def to_upper_snake(string: str):
         """toUpperSnake
         string: str, case: str = "lower", case1: str = "lower"
 
@@ -262,7 +262,7 @@ class Case:
 
 
 
-    def toSentence(string: str, case: str = "lower"):
+    def to_sentence(string: str, case: str = "lower"):
         """toSentence
         string: str, case: str = "lower", case1: str = "lower"
 
