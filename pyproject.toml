@@ -25,9 +25,3 @@ classifiers=[
 build = "0.7.0"
 setuptools = "^57.4.0"
 pdoc = "^8.0.1"
-
-[tool.poetry.dev-dependencies.black]
-version = "^21.12b0"
-allow-prereleases = true
-python = "^3.6"
-markers = "platform_python_implementation == 'CPython'"
