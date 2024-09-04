@@ -24,4 +24,4 @@ classifiers=[
 [tool.poetry.dev-dependencies]
 build = "0.7.0"
 setuptools = "^70.0.0"
-pdoc = "^8.0.1"
+pdoc = "^14.5.1"
